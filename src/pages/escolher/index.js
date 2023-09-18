@@ -1,6 +1,6 @@
-import React from 'react'
+
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
-import {useNavigation} from '@react-navigation/native'
+import React, { useState } from 'react';
 
 export default function Escolher() {
   const [imagemAtual, setImagemAtual] = useState(1);
@@ -11,8 +11,7 @@ export default function Escolher() {
 
   return (
     <View style={styles.container}>
-        <Text style={styles.title}>Qual é mais cria?</Text>
-      <Text style={styles.text}>Teste</Text>
+        <Text style={styles.title}>É cria ou não é?</Text>
       <View style={styles.imageContainer}>
         {imagemAtual === 1 ? (
           <Image
@@ -28,10 +27,10 @@ export default function Escolher() {
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={toggleImagem} style={styles.button}>
-          <Text style={styles.buttonText}>Esse é mais cria</Text>
+          <Text style={styles.buttonText}>Esse é cria</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={toggleImagem} style={styles.button}>
-          <Text style={styles.buttonText}>Esse é mais cria</Text>
+          <Text style={styles.buttonText}>Esse não é cria</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -45,13 +44,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
   imageContainer: {
     flexDirection: 'row',
+    fontWeight: 'bold'
   },
   image: {
     width: 150,
@@ -74,5 +69,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
+    fontWeight: 'bold'
   }
 });
