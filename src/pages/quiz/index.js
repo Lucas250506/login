@@ -9,33 +9,31 @@ export default function Escolher() {
   const toggleImagem = () => {
     setImagemAtual(imagemAtual === 1 ? 2 : 1);
   };
-
+  
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Acerte quem é o mais cria</Text>
+      <Text style={styles.title}>Acerte quem é mais bonita</Text>
       <View style={styles.imageContainer}>
-        <Image
-          source={imagemAtual === 1 ? require('../../assets/cria1.jpeg') : require('../../assets/cria2.jpeg')}
+      <Image
+          source={imagemAtual === 1 ? require('../../assets/feia.jpg') : require('../../assets/cria2.jpeg')}
           style={styles.image}
         />
         <Image
-          source={imagemAtual === 1 ? require('../../assets/cria2.jpeg') : require('../../assets/cria1.jpeg')}
+          source={imagemAtual === 1 ? require('../../assets/linda.jpg') : require('../../assets/cria1.jpeg')}
           style={styles.image}
         />
-      </View>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Errou')} style={styles.button}>
-          <Text style={styles.buttonText}>Esse é o mais cria</Text>
+       </View>
+       <View style={styles.buttonContainer}>
+        <TouchableOpacity onPress={() => navigation.navigate('Errouu')} style={styles.button}>
+          <Text style={styles.buttonText}>Essa é mais bonita</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Acertou')} style={styles.button}>
-          <Text style={styles.buttonText}>Esse é o mais cria</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('Acertouu')} style={styles.button}>
+          <Text style={styles.buttonText}>Essa é mais bonita</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 }
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -62,7 +60,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: 'bold',
     color: '#fff',
   },
